@@ -1,0 +1,54 @@
+/* ============================================
+   Reveal animations - fade in + lift on scroll
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 900ms cubic-bezier(.2,.8,.2,1), transform 900ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform, opacity;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.about__values .reveal:nth-child(1) { transition-delay: 80ms; }
+.about__values .reveal:nth-child(2) { transition-delay: 160ms; }
+.about__values .reveal:nth-child(3) { transition-delay: 240ms; }
+
+.services__grid .service:nth-child(1) { transition-delay: 0ms; }
+.services__grid .service:nth-child(2) { transition-delay: 80ms; }
+.services__grid .service:nth-child(3) { transition-delay: 160ms; }
+.services__grid .service:nth-child(4) { transition-delay: 240ms; }
+.services__grid .service:nth-child(5) { transition-delay: 0ms; }
+.services__grid .service:nth-child(6) { transition-delay: 80ms; }
+.services__grid .service:nth-child(7) { transition-delay: 160ms; }
+.services__grid .service:nth-child(8) { transition-delay: 240ms; }
+
+.realisations__grid .reali:nth-child(1) { transition-delay: 0ms; }
+.realisations__grid .reali:nth-child(2) { transition-delay: 100ms; }
+.realisations__grid .reali:nth-child(3) { transition-delay: 200ms; }
+.realisations__grid .reali:nth-child(4) { transition-delay: 0ms; }
+.realisations__grid .reali:nth-child(5) { transition-delay: 100ms; }
+.realisations__grid .reali:nth-child(6) { transition-delay: 200ms; }
+
+.contact__infos .reveal:nth-child(1) { transition-delay: 80ms; }
+.contact__infos .reveal:nth-child(2) { transition-delay: 160ms; }
+.contact__infos .reveal:nth-child(3) { transition-delay: 240ms; }
+
+/* Hero typing-like reveal: orchestrated par js */
+.hero .reveal { transition-delay: 0ms; }
+.hero__title .reveal:nth-child(1) { transition-delay: 200ms; }
+.hero__title .reveal:nth-child(2) { transition-delay: 400ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero__image { animation: none; }
+  .loader__line { animation: none; }
+}
