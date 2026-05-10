@@ -621,6 +621,152 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================
+   Experience / Stats — Notre histoire
+   ============================================ */
+.experience {
+  padding: 8rem 0;
+  background: var(--c-cream);
+}
+
+.experience__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.experience__intro p {
+  color: var(--c-ink-soft);
+  margin-bottom: 1rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--c-line);
+  border-left: 1px solid var(--c-line);
+}
+
+.stat {
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  text-align: center;
+  background: var(--c-cream-soft);
+  transition: background var(--t-base);
+}
+.stat:hover { background: var(--c-white); }
+
+.stat__number {
+  display: block;
+  font-family: var(--ff-serif);
+  font-size: clamp(2.75rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--c-brown);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+.stat__number--stars {
+  font-style: normal;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  letter-spacing: 0.15em;
+  color: var(--c-brown);
+  padding-top: 0.5rem;
+}
+.stat__suffix {
+  font-size: 0.55em;
+  color: var(--c-brown-light);
+  font-style: normal;
+  vertical-align: super;
+  margin-left: 0.05em;
+  font-weight: 500;
+}
+.stat__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--c-ink-soft);
+  font-weight: 500;
+}
+
+/* ============================================
+   Testimonials
+   ============================================ */
+.testimonials {
+  padding: 8rem 0;
+  background: var(--c-cream);
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.testimonial {
+  background: var(--c-white);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform var(--t-base), box-shadow var(--t-base);
+}
+.testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+}
+
+.testimonial__rating {
+  color: var(--c-brown);
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+}
+
+.testimonial__quote {
+  font-family: var(--ff-serif);
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--c-ink);
+  font-style: italic;
+  flex-grow: 1;
+  position: relative;
+}
+.testimonial__quote::before {
+  content: "\201C";
+  position: absolute;
+  left: -0.5rem;
+  top: -2rem;
+  font-size: 4rem;
+  color: var(--c-brown-light);
+  opacity: 0.35;
+  line-height: 1;
+  font-family: var(--ff-serif);
+}
+
+.testimonial__author {
+  border-top: 1px solid var(--c-line);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.testimonial__author strong {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--c-brown);
+  font-style: italic;
+}
+.testimonial__author span {
+  font-size: 0.85rem;
+  color: var(--c-ink-soft);
+}
+
+/* ============================================
    Zone d'intervention
    ============================================ */
 .zone {
@@ -843,7 +989,7 @@ h1, h2, h3, h4 {
 @media (max-width: 1024px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .realisations__grid { grid-template-columns: repeat(2, 1fr); }
-  .about__grid, .zone__grid, .contact__grid { gap: 3rem; }
+  .about__grid, .zone__grid, .contact__grid, .experience__inner { gap: 3rem; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
 }
 
@@ -873,9 +1019,11 @@ h1, h2, h3, h4 {
   .hero__actions .btn { width: 100%; }
   .hero__scroll { bottom: 1.25rem; }
 
-  .about, .services, .realisations, .zone, .contact { padding: 5rem 0; }
-  .about__grid, .zone__grid, .contact__grid { grid-template-columns: 1fr; }
+  .about, .services, .realisations, .zone, .contact, .experience, .testimonials { padding: 5rem 0; }
+  .about__grid, .zone__grid, .contact__grid, .experience__inner { grid-template-columns: 1fr; gap: 3rem; }
   .about__visual { aspect-ratio: 4/3; }
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .testimonial { padding: 2rem; }
 
   .services__grid { grid-template-columns: 1fr; }
   .realisations__grid { grid-template-columns: 1fr; }
