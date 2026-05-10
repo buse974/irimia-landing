@@ -200,10 +200,10 @@ h1, h2, h3, h4 {
   transition: all var(--t-base);
 }
 .header.is-scrolled {
-  background: rgba(250, 247, 242, 0.92);
+  background: rgba(0, 0, 0, 0.62);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
-  box-shadow: 0 1px 0 var(--c-line);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
   padding: 0.75rem 0;
 }
 
@@ -252,7 +252,7 @@ h1, h2, h3, h4 {
 }
 .nav__link:hover::after { right: 0; }
 
-.header.is-scrolled .nav__link { color: var(--c-ink); }
+.header.is-scrolled .nav__link { color: var(--c-cream); }
 
 .nav__link--cta {
   background: var(--c-brown);
@@ -283,7 +283,7 @@ h1, h2, h3, h4 {
   background: var(--c-cream);
   transition: all var(--t-base);
 }
-.header.is-scrolled .nav__toggle span,
+.header.is-scrolled .nav__toggle span { background: var(--c-cream); }
 .header.is-menu-open .nav__toggle span { background: var(--c-ink); }
 
 .header.is-menu-open .nav__toggle span:nth-child(1) {
@@ -340,7 +340,7 @@ h1, h2, h3, h4 {
 .hero__logo {
   display: block;
   width: 100%;
-  max-width: 880px;
+  max-width: 640px;
   height: auto;
   margin: 0 auto 2rem;
   filter: drop-shadow(0 8px 30px rgba(255, 200, 100, 0.25));
